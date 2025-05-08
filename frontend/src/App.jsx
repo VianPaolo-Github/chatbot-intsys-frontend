@@ -3,7 +3,7 @@ import { Send } from "lucide-react";
 import "./App.css";
 
 export default function App() {
-  const API_BASE = "https://your-backend-url.com";
+  const API_BASE = "chatbot-intssys-backend-production.up.railway.app";
   const [messages, setMessages] = useState([
     { sender: "bot", text: "Hello! I'm here to help. You can chat or upload an enrollment inquiry in .txt, .pdf or .docx format for analysis." }
   ]);
@@ -23,7 +23,7 @@ export default function App() {
     setInput("");
   
     try {
-      const response = await fetch("http://localhost:5000/chat", {
+      const response = await fetch(`${API_BASE}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
@@ -54,7 +54,7 @@ export default function App() {
     setIsAnalyzing(true);
   
     try {
-      const response = await fetch("http://localhost:5000/upload-essay", {
+      const response = await fetch(`${API_BASE}/upload-essay`, {
         method: "POST",
         body: formData,
       });
