@@ -3,7 +3,7 @@ import { Send } from "lucide-react";
 import "./App.css";
 
 export default function App() {
-  const API_BASE = "chatbot-intssys-backend-production.up.railway.app";
+  const API_BASE = "https://chatbot-intssys-backend-production.up.railway.app";
   const [messages, setMessages] = useState([
     { sender: "bot", text: "Hello! I'm here to help. You can chat or upload an enrollment inquiry in .txt, .pdf or .docx format for analysis." }
   ]);
